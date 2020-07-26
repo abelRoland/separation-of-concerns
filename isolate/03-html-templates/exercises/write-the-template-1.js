@@ -7,7 +7,9 @@
  * @returns {string} rendered header tag
  */
 const renderHeader = (level, text) => {
-  return _;
+  const number = level;
+  const tag = `<h${number}>${text}</h${number}>`
+  return tag;
 };
 
 const happyH1 = renderHeader(1, ':)');
@@ -22,6 +24,6 @@ console.assert(sadH2 === '<h2>:(</h2>',
 
 const divEl = document.createElement('div');
 
-divEl.innerHTML = happyH2;
-divEl.innerHTML += sadH1;
+divEl.innerHTML = happyH1;
+divEl.innerHTML += sadH2;
 console.log(divEl);

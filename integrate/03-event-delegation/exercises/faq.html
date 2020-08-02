@@ -11,16 +11,16 @@
     const toggleFAQsHandler = (event) => {
       debugger;
 
-      const sectionEl = _;
-      const sectionChildren = _;
+      const sectionEl = document.getElementById('faqs');
+      const sectionChildren = sectionEl.children;
 
-      const eventPath = _;
-      const eventTarget = _;
+      const eventPath = event.composedPath();
+      const eventTarget = event.target; 
 
-      for (const _ of _) {
-        const faqNotInPath = _;
-        if (faqNotInPath && _.open) {
-          _;
+      for (const detailElement of sectionChildren) {
+        const faqNotInPath = eventPath.indexOf(detailElement) === -1;
+        if (faqNotInPath && detailElement.open) {
+          detailElement.open = false;
         }
       }
     };
@@ -59,8 +59,7 @@
   </main>
 
   <script id='listeners'>
-    _;
-    _;
+    document.getElementById('faqs').addEventListener('click', toggleFAQsHandler);
   </script>
 
   <!--

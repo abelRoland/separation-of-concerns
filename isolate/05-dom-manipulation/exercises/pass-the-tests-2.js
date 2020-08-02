@@ -11,8 +11,16 @@ console.log(ulEl.nodeName, ulEl.cloneNode(true));
 
 // --- write some code ---
 
+const liLast = ulEl.children[3];
+ulEl.removeChild(liLast);
 
+const pEl = ulEl.children[1];
+const liEl = document.createElement('LI');
+ulEl.replaceChild(liEl, pEl);
 
+ulEl.children[0].innerHTML = 'toad';
+ulEl.children[1].innerHTML = 'frog';
+ulEl.children[2].innerHTML = 'salamander';
 
 
 // --- --- --- --- --- ---
